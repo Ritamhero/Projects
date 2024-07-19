@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        input[type="checkbox"]
+        {
+            appearance: none;
+            width: 15px;
+            height: 15px;
+            border: 2px solid cyan;
+            border-radius:3px;
+            background-color: black;
+        }
+        input[type="checkbox"]:checked{
+            appearance: none;
+            width: 15px;
+            height: 15px;
+            cursor: pointer;
+            border-radius: 3px;
+            background-color: cyan;
+            background:#409fd6 url("tick.png") center/contain no-repeat;
+
+        }
+        .hi
+        {
+            box-shadow: 0px 5px 1px -2px purple;
+        }
+        .hello
+        {
+            box-shadow: 0px 4px 1px -2px yellow;
+        }
+        .rs {
+            -webkit-appearance: none; /* Remove default appearance */
+            appearance: none; /* Remove default appearance */
+            width: 100%; /* Full width */
+            height: 6px; /* Track height */
+            background: #290238; /* Track background */
+            outline: none; /* Remove outline */
+            opacity: 1; /* Track opacity */
+            transition: opacity .2s; /* Transition for hover effect */
+        }
+
+        .rs:hover {
+            opacity: 1; /* Full opacity on hover */
+        }
+         
+        /* WebKit (Chrome, Safari, Opera) */
+        .rs::-webkit-slider-thumb {
+            -webkit-appearance: none; /* Remove default appearance */
+            appearance: none; /* Remove default appearance */
+            width: 20px; /* Thumb width */
+            height: 20px; /* Thumb height */
+            background: yellow; /* Thumb color */
+            cursor: pointer; /* Pointer cursor on hover */
+            border-radius: 50%; /* Make thumb circular */
+        }
+        .rs::-webkit-slider-thumb:hover {
+            -webkit-appearance: none; /* Remove default appearance */
+            appearance: none; /* Remove default appearance */
+            width: 20px; /* Thumb width */
+            height: 20px; /* Thumb height */
+            background: black; /* Thumb color */
+            cursor: pointer; /* Pointer cursor on hover */
+            border-radius: 50%; /* Make thumb circular */
+            box-shadow: 0px 0px 7px 4px yellow;
+        }
+    </style>
+</head>
+<body class="flex flex-col h-screen items-center space-y-3 relative top-44 bg-gradient-to-r from-purple-800 to-purple-950">
+    <div class="w-60 h-10 flex text-xl items-center justify-center text-white font-semibold">
+        PASSWORD GENERATOR
+    </div>
+    <div class=" hi flex w-72 h-10 border-2 border-black justify-between items-center rounded-lg bg-black">
+        <div class="p-3 text-yellow-400" id="in">
+            PASSWORD
+        </div>
+        <div class="p-3">
+            <button id="cop">
+            <img src="copy.png" alt="image not found">
+            </button>
+        </div>
+    </div>
+    <div class="hi w-72 h-80 border-2 rounded-lg flex flex-col p-3 space-y-4 bg-black border-black">
+        <div class="flex justify-between">
+         <div class="h-5 text-white">
+            Password length
+         </div>
+         <div class="h-18 text-yellow-400" id="pl">
+            10
+         </div>
+        </div>
+        <div>
+            <input class="w-full rs" type="range" id="rng" max="16" min="8" value="10">
+        </div>
+        <div>
+            <ul class="text-white space-y-2">
+                <li>
+                    <div class="flex space-x-2">
+                    <input  class="w-3 h-4" type="checkbox" id="cond1" name="cond1" value="uppercase">
+                    <label class= "h-4 relative bottom-1" for="cond1">Include uppercase letters</label>
+                    </div>
+                </li>
+                <li>
+                    <div class="flex space-x-2">
+                    <input class="w-3 h-3" type="checkbox" id="cond2" name="cond2" value="lowercase">
+                    <label class="h-4 relative bottom-1" for="cond1">Include lowercase letters</label>
+                    </div>
+                </li>
+                <li>
+                    <div class="flex space-x-2">
+                    <input class="w-3 h-3" type="checkbox" id="cond3" name="cond3" value="numbers">
+                    <label class="h-4 relative bottom-1" for="cond1">Include numbers</label>
+                    </div>
+                </li>
+                <li>
+                    <div class="flex space-x-2">
+                    <input class="w-3 h-3" type="checkbox" id="cond4" name="cond4" value="symbols">
+                    <label class="h-4 relative bottom-1" for="cond1">Include symbols</label>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="flex justify-between relative top-2">
+        <div class="h-5 text-white">
+            Strength
+        </div>
+        <div class="w-4 h-4 rounded-full bg-gray-400 blur-sm relative top-1" id="str">
+        </div>
+        </div>
+        <div class="flex justify-center relative top-5">
+            <button class="hover:font-semibold" id="mb">
+           <div class=" hello w-64 h-9 rounded-lg bg-purple-600 flex justify-center items-center">
+            <div class="h-4 text-base flex justify-center items-center text-yellow-400">
+                Generate Password
+            </div>
+           </div>
+        </button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
