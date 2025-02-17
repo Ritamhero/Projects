@@ -67,7 +67,7 @@ while True:
         right_eye=frame[y2_min-10:y2_max+10,x2_min:x2_max]
         right_eye= cv2.resize(right_eye,(80,80))
         right_eye=right_eye/255.0
-        right_eye=left_eye.reshape((80,80,3))
+        right_eye=right_eye.reshape((80,80,3))
         right_eye= np.expand_dims(right_eye,axis=0)
         prediction1=model.predict(left_eye)
         prediction2=model.predict(right_eye)
